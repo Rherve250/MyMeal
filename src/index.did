@@ -1,0 +1,125 @@
+service: () -> {
+    "register": (record {
+        email: text;
+        password: text;
+    }) -> (record {
+        status: int;
+        message: text;
+    });
+
+    "login": (record {
+        email: text;
+        password: text;
+    }) -> (record {
+        status: int;
+        token: opt text;
+    });
+
+    "Restaurant": (record {
+        name: text;
+        address: text;
+        phone_number: text;
+        email: text;
+        description: text;
+    }) -> (record {
+        status: int;
+        message: text;
+    });
+
+    "getAllRestaurants": () -> (record {
+        status: int;
+        restaurants: vec record {
+            restaurant_id: text;
+            name: text;
+            address: text;
+            phone_number: text;
+            email: text;
+            description: text;
+            createdAt: int;
+            updatedAt: int;
+        };
+    });
+
+    "getRestaurant": (text) -> (record {
+        status: int;
+        restaurant: opt record {
+            restaurant_id: text;
+            name: text;
+            address: text;
+            phone_number: text;
+            email: text;
+            description: text;
+            createdAt: int;
+            updatedAt: int;
+        };
+    });
+
+    "addMenu": (record {
+        restoId: text;
+        title: text;
+        description: text;
+    }) -> (record {
+        status: int;
+        message: text;
+    });
+
+    "getAllMenus": () -> (record {
+        status: int;
+        menus: vec record {
+            menu_id: text;
+            restaurant_id: text;
+            title: text;
+            description: text;
+            createdAt: int;
+            updatedAt: int;
+        };
+    });
+
+    "getMenu": (text) -> (record {
+        status: int;
+        menu: opt record {
+            menu_id: text;
+            restaurant_id: text;
+            title: text;
+            description: text;
+            createdAt: int;
+            updatedAt: int;
+        };
+    });
+
+    "addDish": (record {
+        menuId: text;
+        name: text;
+        description: text;
+        price: float64;
+    }) -> (record {
+        status: int;
+        message: text;
+    });
+
+    "getAllDishes": () -> (record {
+        status: int;
+        dishes: vec record {
+            dish_id: text;
+            menu_id: text;
+            name: text;
+            description: text;
+            price: float64;
+            createdAt: int;
+            updatedAt: int;
+        };
+    });
+
+    "getDish": (text) -> (record {
+        status: int;
+        dish: opt record {
+            dish_id: text;
+            menu_id: text;
+            name: text;
+            description: text;
+            price: float64;
+            createdAt: int;
+            updatedAt: int;
+        };
+    });
+}
