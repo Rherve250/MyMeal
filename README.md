@@ -1,6 +1,7 @@
 # MyMeal Platform
 
-**MyMeal** is a platform that connects users with restaurant chefs for a personalized dining experience. Built on the Internet Computer with Azle, it allows users to customize recipes, view detailed menus, and track orders in real-time. By facilitating direct chef interaction, MyMeal ensures tailored meal preparation and enhanced user satisfaction.
+**MyMeal** is a platform that connects users with restaurant chefs for a personalized dining experience. Built on the Internet Computer with Azle, it allows users to customize recipes, view detailed menus, and track orders. By facilitating direct chef interaction, MyMeal ensures tailored meal preparation and enhanced user satisfaction.
+
 
 ## Table of Contents
 
@@ -22,21 +23,20 @@ MyMeal platform enable user:
 - Get single restaurant
 - View all and one menu
 - View all and one dish
-- customize the dish
-- Chat
+- Order customized dish
 
 MyMeal platform enable Admin:
 
 - register and login.
 - create and edit restaurant
 - Create and edit menu
-- create and edit dish
+- Create,edit dish also add it to menu
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v+)
+- Node.js (v18+)
 - DFX (Internet Computer SDK)
 - Azle (TypeScript framework for building canisters)
 
@@ -68,6 +68,54 @@ MyMeal platform enable Admin:
    ```
 
 
+# Endpoints
+
+ ## Authentication
+
+- `POST /register` : Register user
+  
+  ` {email:"herve@gmail",password:"HelloIcp"} `
+
+- `POST /login` : Login user
+  
+  ` {email:"herve@gmail",password:"HelloIcp"} `
+
+  
+ ## Restaurant
+  
+- `POST /Restaurant` :Add restaurant
+  
+ ` { name:"Ryves Resto",address: "kk20 ave",phone:"+2570980808",email:"RyvesResto@gmail.com",description:"The best Resto in Town" } `
+  
+-`GET /Restaurant`: Get all restaurant
+- `GET /Restaurant/:id `: Get one restaurant
+
+## Menu
+
+- `POST /Menu/:restoId` :  Add Menu
+   ` { title: "Boiled"} `
+- `GET /Menu `: Get All Menu
+- `GET /Menu/:menuId` : Get one Menu
+- `POST /Menu/:menuId/:dishId` : Add a Dish to a Menu
+## Dish
+
+- `POST /Dish/:userId` : Add dish
+  ````
+  { name: "Burger", ingredients: {bread:"high",salt:"low", meat: "medium "},price:4000}
+  
+  ````
+- `GET /Dish `: Get all dish
+- ` GET /Dish/:id`: Get one dish
+
+## Order
+
+- `POST /Order/:dishId `: Order customized dish
+` { ingredients: {bread:"high",salt:"none", meat: "medium "}} `
+- ` POST /Order/status/:orderId` : Updated the order status
+`{status: "Approved"} `
+
+- ` GET /Order`: Get your orders
+- ` GET /Order/:orderId`: Get one order
 
 
 ## Contributing
