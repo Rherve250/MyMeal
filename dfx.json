@@ -2,7 +2,7 @@
 {
     "canisters": {
         "MyMeal": {
-            "type": "custom",
+            "type": "azle",
             "main": "src/app.ts",
             "candid": "src/app.did",
             "candid_gen": "http",

@@ -74,11 +74,15 @@ MyMeal platform enable Admin:
 
 - `POST /register` : Register user
   
-  ` {email:"herve@gmail",password:"HelloIcp"} `
+  ` {email:"herve@gmail.com",password:"HelloIcp"} `
 
 - `POST /login` : Login user
   
   ` {email:"herve@gmail",password:"HelloIcp"} `
+- Admin role 
+- ` GET /Users`: Get all users
+- ` POST /Users/changeRole/:userId` : Change user role
+    ` {"role":"Chef"}`
 
   
  ## Restaurant
