@@ -2,6 +2,7 @@
 
 **MyMeal** is a platform that connects users with restaurant chefs for a personalized dining experience. Built on the Internet Computer with Azle, it allows users to customize recipes, view detailed menus, and track orders. By facilitating direct chef interaction, MyMeal ensures tailored meal preparation and enhanced user satisfaction.
 
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -66,6 +67,7 @@ MyMeal platform enable Admin:
    dfx deploy
    ```
 
+
 # Endpoints
 
  ## Authentication
@@ -114,6 +116,7 @@ MyMeal platform enable Admin:
 
 - ` GET /Order`: Get your orders
 - ` GET /Order/:orderId`: Get one order
+
 
 ## Contributing
 
