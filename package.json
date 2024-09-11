@@ -6,7 +6,7 @@
   "dependencies": {
     "@dfinity/agent": "^2.0.0",
     "@dfinity/candid": "^2.0.0",
-    "azle": "^0.23.0",
+    "azle": "^0.24.1",
     "bcryptjs": "^2.4.3",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
